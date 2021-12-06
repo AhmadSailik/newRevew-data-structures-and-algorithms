@@ -1,5 +1,7 @@
 'use strict';
 
+const { name } = require("mustache");
+
 /* ------------------------------------------------------------------------------------------------
 
 CHALLENGE 1 - Review
@@ -221,6 +223,10 @@ const snorlaxStats = {
 
 const extractStats = (arr) => {
   // Solution code here...
+  let newArr=arr.map(item=>{
+return {name:item.stat.name,total:item.effort+item.baseStat}
+  });
+return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -321,7 +327,7 @@ describe('Testing challenge 9', () => {
   });
 });
 
-xdescribe('Testing challenge 10', () => {
+describe('Testing challenge 10', () => {
   test('It should return an array containing objects with name and total values', () => {
     expect(extractStats(snorlaxStats.stats)).toStrictEqual([
       { name: 'speed', total: 35, },
