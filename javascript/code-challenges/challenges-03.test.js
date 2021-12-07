@@ -38,6 +38,8 @@ For example, containsAnd(['panda', 'ran', 'and']) returns ['panda', 'and'].
 
 const containsAnd = (arr) => {
   // Solution code here...
+  let newArr=arr.filter(item=>item.includes("and"));
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -50,6 +52,8 @@ For example, oddValues([1,2,3]) returns [1,3].
 
 const oddValues = (arr) => {
   // Solution code here...
+  let newArr=arr.filter(item=>item%2);
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
