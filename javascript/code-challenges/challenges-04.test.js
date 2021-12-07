@@ -284,8 +284,38 @@ const meetings = [
   new Meeting('Friday', '1200', '1345'),
 ];
 
+const sorter = {
+  "monday": 1,
+  "tuesday": 2,
+  "wednesday": 3,
+  "thursday": 4,
+  "friday": 5,
+  "saturday": 6,
+  "sunday": 7
+}
+
 const sortMeetingsByDay = (arr) => {
   // Solution code here...
+  arr.sort((a,b)=>{
+    if(sorter[a.dayOfWeek.toLowerCase()]>sorter[b.dayOfWeek.toLowerCase()]){
+      return 1
+    }else if(sorter[a.dayOfWeek.toLowerCase()]<sorter[b.dayOfWeek.toLowerCase()]){
+      return -1
+    }else{
+      return 0
+    }
+  }).sort((a,b)=>{
+    if(a.dayOfWeek==b.dayOfWeek){
+      if(a.end>b.end){
+        return 1
+      }else if(a.end<b.end){
+        return -1
+      }else{
+        return 0;
+      }
+    }
+  });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
