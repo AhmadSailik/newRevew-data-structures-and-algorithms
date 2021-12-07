@@ -122,6 +122,11 @@ let starWarsData = [{
 
 const returnNames = (arr) => {
   // Solution code here...
+  let newArr=arr.reduce((acc,val,idx)=>{
+    acc[idx]=val.name;
+    return acc;
+  },[]);
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
