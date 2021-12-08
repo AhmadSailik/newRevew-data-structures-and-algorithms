@@ -243,6 +243,13 @@ const isPrime = (value) => {
 
 const countPrimeNumbers = (arr) => {
   // Solution code here...
+  let sum=arr.reduce((acc,val)=>{
+    if(isPrime(val)){
+      acc++
+    }
+    return acc;
+  },0)
+  return sum;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -286,6 +293,13 @@ const snorlaxData = {
 
 const extractStat = (statName, arr) => {
   // Solution code here...
+  let objs=arr.reduce((acc,val)=>{
+    if(val.stat.name==statName){
+      acc=val;
+    }
+    return acc;
+  },null)
+return objs;
 };
 
 /* ------------------------------------------------------------------------------------------------
