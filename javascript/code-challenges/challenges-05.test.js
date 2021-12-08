@@ -299,7 +299,7 @@ const extractStat = (statName, arr) => {
     }
     return acc;
   },null)
-return objs;
+return objs; 
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -314,6 +314,15 @@ Write a function named extractChildren that, given the array of characters from 
 
 const extractChildren = (arr) => {
   // Solution code here...
+  let newArr=characters.filter(item=>item.name.includes("a")).reduce((acc,val)=>{
+    if(val.children){
+      for(let i=0;i<val.children.length;i++){
+        acc.push(val.children[i])
+      }
+    }
+    return acc;
+  },[])
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
