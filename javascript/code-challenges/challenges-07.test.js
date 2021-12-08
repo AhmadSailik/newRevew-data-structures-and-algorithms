@@ -104,8 +104,10 @@ Write a function name wordsToCharList that, given a string as input, returns a n
 For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 ------------------------------------------------------------------------------------------------ */
 
-const wordsToCharList = (arr) => {
+const wordsToCharList = (str) => {
   // Solution code here...
+  let arr=str.split('')
+  return arr;
 };
 
 
