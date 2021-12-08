@@ -214,6 +214,14 @@ Hint: The accumulator should begin as { count: 0, sum: 0 }
 
 const calculateAverage = (arr) => {
   // Solution code here...
+    let sum=arr.reduce((acc,val,idx)=>{
+      acc["count"]=idx+1;
+      acc["sums"]=acc.sums+val;
+     
+      return acc;
+      },{count:0,sums:0})
+    return sum.sums/sum.count;
+ 
 };
 
 /* ------------------------------------------------------------------------------------------------
