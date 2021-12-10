@@ -196,7 +196,9 @@ Return a new array containing just the verbs. For example, ['Mix until evenly di
 const stepActions = (recipe) => {
   let result = [];
   // Solution code here...
-  result.push(recipe.ingredients[i].split(" ")[0])
+  for(let i=0;i<recipe.steps.length;i++){
+  result.push(recipe.steps[i].split(" ")[0])
+  }
   return result;
 };
 
