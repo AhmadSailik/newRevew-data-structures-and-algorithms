@@ -1,5 +1,7 @@
 'use strict';
 
+const { nextElementSibling } = require("domutils");
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1 - Review
 
@@ -217,7 +219,16 @@ For example:
 
 const removeEvenValues = (arr) => {
   // Solution code here...
+  let num=arr.length;
+ arr.forEach(item=> {
+   if(item%2!=0){
+     arr.push(item)
+   }
+ }).splice(num,arr.length);
+  
 };
+
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 10 - Stretch Goal
@@ -236,6 +247,7 @@ removeLastCharacters('Gregor', 9) returns ''
 
 const removeLastCharacters = (str, numberOfCharacters) => {
   // Solution code here...
+  return str.substring(0,str.length-numberOfCharacters)
 };
 
 
@@ -372,6 +384,7 @@ describe('Testing challenge 10', () => {
     expect(removeLastCharacters('hello', 12)).toStrictEqual('');
     expect(removeLastCharacters('', 1)).toStrictEqual('');
     expect(removeLastCharacters('a', 1)).toStrictEqual('');
+    expect(removeLastCharacters('a', -1)).toStrictEqual('a');
   });
 });
 
